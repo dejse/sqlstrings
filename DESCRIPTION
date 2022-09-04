@@ -1,9 +1,9 @@
 Package: sqlstrings
-Title: Load SQL Files into Lists 
+Title: Map SQL Statements from Files to List Attributes
 Version: 0.0.0.9000
 Authors@R: 
-    person("Dejan", "Prvulovic", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Dejan", "Prvulovic", , "dejan.prv@gmail.com", role = c("aut", "cre"))
+Description: Maps annotated SQL statements and queries from separate files to R list attributes.  
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
