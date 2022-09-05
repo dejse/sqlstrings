@@ -49,12 +49,11 @@ generate_sql_strings <- function(path) {
     if (i == length(line_pos_prefix)) {
       end <- length(txt)
     }
-    stmt <- stringr::str_c(txt[start:end], collapse = "\n")
+    stmt <- stringr::str_trim(stringr::str_c(txt[start:end], collapse = "\n"))
 
     # construct list
     sql[[stmt_name]] <- stmt
   }
   
-  print(sql)
   return(sql)
 }
