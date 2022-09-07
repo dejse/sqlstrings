@@ -8,7 +8,7 @@ create_test_files <- function(tmp = tempdir(check = TRUE)) {
 
 add_sql_code <- function(tmp = tempdir(check = TRUE)) {
   readr::write_lines("
-  -- name: create
+  -- name: create_tab1
   create table tab1 (
     id integer primary key,
     city text unique not null,        -- comment
@@ -19,7 +19,7 @@ add_sql_code <- function(tmp = tempdir(check = TRUE)) {
   ", fs::path(tmp, "test-folder", "file.txt"))
 
   readr::write_lines("
-  -- name: insert
+  -- name: insert_tab1
   insert into tab1 values 
     (1, 'Berlin', 3),
     (2, 'Paris', 2),
