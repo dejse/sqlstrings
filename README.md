@@ -5,8 +5,7 @@
 
 ## Overview
 
-Writing SQL Code in R files brings some disadvantages, such as losing syntax highlighting and autocomplete. With the help of `sqlstrings`, you can write SQL code in separate files and load the statements into R as a list object. 
-
+This package is a little helper for `DBI`. Writing SQL code in R files is tedious for longer queries and statements. Some disadvantages are losing syntax highlighting and autocomplete. With the help of `sqlstrings`, we can write SQL code in separate files and load the SQL code into an R list object. 
 
 ## Installation
 
@@ -40,7 +39,7 @@ insert into tab1 values
 select count(*) from tab1;
 ```
 
-In R, we can map the sql statements as strings to list attributes: 
+In R, we can map the sql code as strings to a list:
 
 ```r
 library(sqlstrings)
@@ -56,7 +55,12 @@ print(s)
 ## 
 ## $select_count
 ## [1] "select count(*) from tab1;"
+```
 
+Once the list object is created, we can use the list with `DBI`:
+
+```r
 DBI::dbExecute(con, s$create_tab1)
 DBI::dbExecute(con, s$insert_tab1)
+DBI::dbGetQuery(con, s$select_count)
 ```
