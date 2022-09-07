@@ -1,10 +1,12 @@
-#' Read all files from path and return a list object with attributes mapped to sql statements
+#' Read all files from path and return a list object with attributes mapped to sql statements and queries
 #' @param path - a path to a folder or a file containing sql code
 #' @return - a list with attributes mapped to sql statements
-#' @example
-#' 
+#' @examples
+#' s <- generate_sql_strings("./path/to/sql/")
+#' s <- generate_sql_strings("./path/to/sql/001.sql")
+#' print(s)
 #' @export
-generate_sql_strings <- function(path) {
+generate_sql_strings <- function(path = "") {
 
   # check if folder or file exists
   stopifnot("Folder or File does not exist" = fs::file_exists(path) || fs::dir_exists(path))
