@@ -1,6 +1,8 @@
 #' Read all files from path and return a list object with attributes mapped to sql statements
 #' @param path - a path to a folder or a file containing sql code
 #' @return - a list with attributes mapped to sql statements
+#' @example
+#' 
 #' @export
 generate_sql_strings <- function(path) {
 
@@ -33,7 +35,7 @@ generate_sql_strings <- function(path) {
   # @return string
   parse_function_name <- function(line, prefix) {
     prefix_end <- stringr::str_length(prefix)
-    sql_name <- stringr::str_trim(stringr::str_sub(line, start = prefix_end))
+    sql_name <- stringr::str_trim(stringr::str_sub(stringr::str_trim(line), start = prefix_end))
     sql_name <- stringr::str_replace_all(sql_name, " ", "_")
     return(sql_name)
   }
