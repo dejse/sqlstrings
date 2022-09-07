@@ -30,7 +30,7 @@ create table tab1 (
   pop integer
 );
 
--- name: insert_into_tab1
+-- name: insert_tab1
 insert into tab1 values 
   (1, 'Berlin', 3),
   (2, 'Paris', 2),
