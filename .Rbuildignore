@@ -5,3 +5,4 @@
 ^.lintr$
 ^devtools.r$
 ^.github$
+^cran-comments.md$
