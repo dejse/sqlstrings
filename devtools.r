@@ -20,5 +20,10 @@ test()
 document()
 check()
 
+# Submit
+check_rhub()
+check_win_devel()
+
+spell_check()
 build()
 release()
