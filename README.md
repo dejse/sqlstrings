@@ -1,6 +1,7 @@
 # sqlstrings
 
 <!-- badges: start -->
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/sqlstrings)](https://cran.r-project.org/package=sqlstrings)
 <!-- badges: end -->
 
 ## Overview
