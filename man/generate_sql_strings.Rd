@@ -2,9 +2,9 @@
 % Please edit documentation in R/sqlstrings.R
 \name{generate_sql_strings}
 \alias{generate_sql_strings}
-\title{Read all files from path and return a list object with attributes mapped to sql statements}
+\title{Read all files from path and return a list object with attributes mapped to sql statements and queries}
 \usage{
-generate_sql_strings(path)
+generate_sql_strings(path = "")
 }
 \arguments{
 \item{path}{\itemize{
@@ -17,5 +17,5 @@ generate_sql_strings(path)
 }
 }
 \description{
-Read all files from path and return a list object with attributes mapped to sql statements
+Read all files from path and return a list object with attributes mapped to sql statements and queries
 }
