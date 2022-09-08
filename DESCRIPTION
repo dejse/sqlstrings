@@ -3,7 +3,7 @@ Title: Map 'SQL' Code to R Lists
 Version: 1.0.0
 Authors@R: 
     person("Dejan", "Prvulovic", , "dejan.prv@gmail.com", role = c("aut", "cre"))
-Description: This package provides a helper function, to bulk read 'SQL' code from separate files and load it into an 'R' list, where the list elements contain the individual statements and queries as strings. This works by annotating the 'SQL' code with a name comment, which also will be the name of the list element. 
+Description: Provides a helper function, to bulk read 'SQL' code from separate files and load it into an 'R' list, where the list elements contain the individual statements and queries as strings. This works by annotating the 'SQL' code with a name comment, which also will be the name of the list element. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
