@@ -1,6 +1,6 @@
-#' Read all files from path and return a list object with attributes mapped to sql statements and queries
-#' @param path - a path to a folder or a file containing sql code
-#' @return - a list with attributes mapped to sql statements
+#' Read all files from path and return a list object with attributes mapped to 'SQL' statements and queries
+#' @param path - a path to a folder or a file containing 'SQL' code
+#' @return - a list with attributes mapped to 'SQL' statements
 #' @export
 generate_sql_strings <- function(path = "") {
 
@@ -10,7 +10,7 @@ generate_sql_strings <- function(path = "") {
   sql <- list()
 
   # Read all files from path, concatenate into string vector
-  # @param path - a path to a folder or a file containing sql code
+  # @param path - a path to a folder or a file containing 'SQL' code
   # @return string vector
   read_all_files <- function(path) {
     txt <- ""
@@ -27,8 +27,8 @@ generate_sql_strings <- function(path = "") {
   prefix <- stringr::str_c("-- ", "name", ": ")
   line_pos_prefix <- which(!is.na(stringr::str_locate(txt, prefix)[,1]))
 
-  # Parse sql statement name, given line and prefix (e.g. "-- name: my_statement")
-  # @param line - sql code line 
+  # Parse 'SQL' statement name, given line and prefix (e.g. "-- name: my_statement")
+  # @param line - 'SQL' code line 
   # @param prefix - string
   # @return string
   parse_function_name <- function(line, prefix) {
@@ -38,7 +38,7 @@ generate_sql_strings <- function(path = "") {
     return(sql_name)
   }
 
-  # Construct list attributes with sql statement name and code
+  # Construct list attributes with 'SQL' statement name and code
   for (i in seq_along(line_pos_prefix)) {
     # Parse statement name
     stmt_name <- parse_function_name(txt[line_pos_prefix[i]], prefix)
