@@ -6,7 +6,7 @@
 
 ## Overview
 
-Writing SQL code in R files is tedious for longer queries and statements and comes with certain disadvantages, such as losing syntax highlighting and autocomplete. With the help of `sqlstrings`, we can bulk read SQL code from a folder or a file and load it into an R list. The elements of the list are populated with the individual sql statements and queries. Before that, the SQL code must be annotated with a special name comment. 
+Writing SQL code in R files is tedious for longer queries and statements and comes with certain disadvantages, such as losing syntax highlighting and autocomplete. With the help of `sqlstrings`, we can bulk read SQL code from a folder or a file and load it into an R list. The elements of the list are populated with the individual SQL statements and queries. Before that, the SQL code must be annotated with a special name comment. 
 
 
 ## Installation
