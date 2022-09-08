@@ -1,6 +1,18 @@
-#' Read all files from path and return a list object with attributes mapped to 'SQL' statements and queries
-#' @param path - a path to a folder or a file containing 'SQL' code
-#' @return - a list with attributes mapped to 'SQL' statements
+#' Read all files from path and return a list, where the list elements contain the individual 'SQL' statements and queries as strings
+#' @param path A path to a folder or a file containing 'SQL' code
+#' @return A list with named elements containing 'SQL' statements as strings
+#' @examples 
+#' ## prepare example file
+#' p <- fs::path(tempdir(), "test-file-001.sql")
+#' fs::file_create(p)
+#' readr::write_lines("
+#'   -- name: select_count
+#'   select count(*) from tab1;
+#' ", p)
+#' 
+#' ## sqlstrings
+#' s <- generate_sql_strings(path = p)
+#' s$select_count
 #' @export
 generate_sql_strings <- function(path = "") {
 
@@ -10,7 +22,7 @@ generate_sql_strings <- function(path = "") {
   sql <- list()
 
   # Read all files from path, concatenate into string vector
-  # @param path - a path to a folder or a file containing 'SQL' code
+  # @param path A path to a folder or a file containing 'SQL' code
   # @return string vector
   read_all_files <- function(path) {
     txt <- ""

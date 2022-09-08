@@ -2,20 +2,29 @@
 % Please edit documentation in R/sqlstrings.R
 \name{generate_sql_strings}
 \alias{generate_sql_strings}
-\title{Read all files from path and return a list object with attributes mapped to sql statements and queries}
+\title{Read all files from path and return a list, where the list elements contain the individual 'SQL' statements and queries as strings}
 \usage{
 generate_sql_strings(path = "")
 }
 \arguments{
-\item{path}{\itemize{
-\item a path to a folder or a file containing sql code
-}}
+\item{path}{A path to a folder or a file containing 'SQL' code}
 }
 \value{
-\itemize{
-\item a list with attributes mapped to sql statements
-}
+A list with named elements containing 'SQL' statements as strings
 }
 \description{
-Read all files from path and return a list object with attributes mapped to sql statements and queries
+Read all files from path and return a list, where the list elements contain the individual 'SQL' statements and queries as strings
+}
+\examples{
+## prepare example file
+p <- fs::path(tempdir(), "test-file-001.sql")
+fs::file_create(p)
+readr::write_lines("
+  -- name: select_count
+  select count(*) from tab1;
+", p)
+
+## sqlstrings
+s <- generate_sql_strings(path = p)
+s$select_count
 }
